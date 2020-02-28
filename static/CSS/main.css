@@ -1,0 +1,149 @@
+/*Basic decoration to make app easier to read. Can be ignored.*/
+
+#dependencies{
+}
+
+.sub_info_none{
+    display: none;
+}
+
+.sub_info_block{
+    display: block;
+    padding: 10px;
+    margin: 10px;
+    }
+
+
+.modal{
+	display: block;
+	position: fixed; /* Stay in place */
+	z-index: 6; /* Sit on top */
+	padding: 100px;
+	border-radius: 10%;  /* Location of the box */
+	left: 500px;
+	top: 100px;
+	width: 35%; /* Full width */
+	height: 45%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: #6a8caf;
+}
+
+.close{
+    display: block;
+	width: 20%;
+	height: 20%;
+	top:50px;
+	left:750px;
+	position: absolute;
+	fill: #cf666b;
+	z-index: 4;
+}
+
+
+#body{
+  background: #a7e9af;
+}
+
+#headder{
+    border-radius: 500px;
+    background: #eef9bf;
+
+    width: 1885px;
+    height: 100px;
+
+    top:-15px;
+	left:0px;
+
+	position: absolute;
+
+	color: #75b79e;
+	text-align: center;
+
+	font-size: 60px;
+	margin: 20px;
+}
+
+#modal_text{
+    color: white;
+    font-size: 20px;
+    left: -50px;
+    position: relative;
+    margin-right: 150px;
+}
+
+.button{
+    background: #a7e9af;
+    width: 120px;
+    height: 60px;
+    border-radius: 20px;
+    color: #6a8caf;
+    top: -150px;
+    left: -250px;
+    position: relative;
+    margin: 10px;
+}
+
+.button:hover {
+    background-color: #eef9bf;
+}
+
+#linkedIn{
+    background: #a7e9af;
+    width: 125px;
+    height: 62px;
+    border-radius: 20px;
+    color: #6a8caf;
+    top: -233px;
+    left: 390px;
+    position: relative;
+    margin: 10px;
+
+}
+
+#linkedIn:hover{
+    background-color: #eef9bf;
+}
+
+#package_div{
+    top: 50px;
+    poisition: absolute;
+}
+
+
+.package_names{
+    width: 1800px;
+    background: #75b79e;
+    top: 90px;
+    position: relative;
+    margin: 25px;
+    padding: 32px;
+    border-radius: 15px;
+    font-size: 30px;
+    color: white;
+    cursor: cell;
+}
+
+
+#xSymbol{
+    display: block;
+	width: 5%;
+	height: 5%;
+	top:50px;
+	left:737px;
+	position: absolute;
+	fill: #cf666b;
+	z-index: 4;
+}
+
+#xSymbol:hover{
+    fill: #eef9bf;
+}
+
+#profiilikuva{
+    width: 30%;
+    height: 30%
+    display: block;
+    top: -365px;
+    right: -470px;
+    position: relative;
+}

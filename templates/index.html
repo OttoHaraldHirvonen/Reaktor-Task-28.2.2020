@@ -1,0 +1,60 @@
+<!-- More accurate layout of webpage -->
+{% block head %}
+    <h1 id="headder">Pre-assignment for junior developer positions</h1>
+{% endblock %}
+
+{% block body %}
+
+    <div id="preface_modal" class="modal">
+        <div class="modal-content">
+    <span class="close">&times;</span>
+    <p id="modal_text">This is Reaktor’s pre-assignment for junior developer positions. I was given a data file, that contained information about packages that were downloaded on some computer. The task was to expose key information about these packages. I have linked original rules and the data file down below. This task was relatively simple, however I have never used flask or Heroku before. So the real difficulty became learning these skills within a day.
+        <br> <br> I am an engineering student majoring in automation and software technology at university of Tampere. I have a strong background in Python and Javascript. I hope that this showcase speaks better of my skills than I can. My objective is to create lasting working relations to following years and after earning my degree in engineering. </p>
+    <svg id="xSymbol" onclick="close_preface()" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2178.79 2132.34"><defs></defs><title>xSymbol</title><rect class="cls-1" x="1525.53" y="-135.83" width="720.62" height="2431.65" rx="116.67" transform="translate(-984.54 1635.99) rotate(-45)"/><rect class="cls-1" x="1479.08" y="-135.83" width="720.62" height="2431.65" rx="116.67" transform="translate(1603.14 3130.49) rotate(-135)"/></svg>
+
+    <img src="{{ url_for('static', filename='Profiilikuva.jpg') }}" id="profiilikuva">
+
+
+            <button id="original_rules" class="button" onclick="window.location.href = 'https://www.reaktor.com/junior-dev-assignment/';"> Original rules
+
+            </button>
+
+            <button id="data_file" class="button"  onclick="window.location.href = 'https://gist.github.com/lauripiispanen/29735158335170c27297422a22b48caa';"> Data file
+
+            </button>
+
+            <button id="source_code" class="button" onclick="window.location.href = 'https://github.com/OttoHaraldHirvonen/Pre-assignment_for_junior_developer_positions.git';"> My source code
+
+            </button>
+
+            <button id="linkedIn" onclick="window.location.href = 'https://www.linkedin.com/in/otto-harald-hirvonen-b634a41a3';">LinkedIn
+
+            </button>
+        </div>
+    </div>
+    <div class="package_div">
+        {% for package_name in info %}
+        <div class="package_names" onclick="change_display()">Package name: {{ package_name }}
+            <p id="dependencies" class="sub_info_none" style="color: white;"> Dependencies: </p>
+                {% if info[package_name][0]|length > 0 %}
+                    {% for dependent_package_name in info[package_name][0] %}
+                        <p class="sub_info_none" style="text-indent: 50px; color: #6a8caf"">{{ dependent_package_name }}</p>
+                        {% endfor %}
+                {% else %}
+                    <p class="sub_info_none" style="text-indent: 50px; color: #6a8caf"> None </p>
+                {% endif %}
+            <p class="sub_info_none" style="color: white"> Description: </p>
+                <p class="sub_info_none" style="text-indent: 50px; color: #6a8caf">{{ info[package_name][1] }}</p>
+            <p class="sub_info_none" style="color: white"> Reverse dependencies: </p>
+                {% if info[package_name][2]|length > 0 %}
+                    {% for reverse_dependent_package_name in info[package_name][2] %}
+                        <p class="sub_info_none" style="text-indent: 50px; color: #6a8caf">{{ reverse_dependent_package_name }}</p>
+                        {% endfor %}
+                {% else %}
+                    <p class="sub_info_none" style="text-indent: 50px; color: #6a8caf"> None </p>
+                {% endif %}
+        </div>{% endfor %}
+
+    </div>
+
+{% endblock %}

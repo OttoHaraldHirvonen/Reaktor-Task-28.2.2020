@@ -1,0 +1,23 @@
+<!--This is the base of the web page. I've extended more technical elements in the index.html file so, that it is easier to read and manipulate-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/main.css') }}">
+
+        <title>Pre-assignment for junior developer positions</title>
+
+    {% include "index.html" %}
+    {% block head %}
+
+    {% endblock %}
+</head>
+<body id="body" onload="give_id(), change_display()">
+    {% block body %}
+
+    {% endblock %}
+
+        <script type = "text/javascript" src = "{{ url_for('static', filename = 'script.js') }}" ></script>
+</body>
+</html>
